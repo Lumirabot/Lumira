@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lumira — Comunidade de Games | Discord</title>
+  <meta name="description" content="Lumira — servidor de Discord com +500 membros. Comunidade de jogos, moderadores ativos, sorteios semanais, VIPs exclusivos e interação entre jogadores." />
+  <style>
+    :root{
+      --bg:#070707;
+      --panel:#0f0f10;
+      --accent:#e10600;
+      --accent-2:#ff3b3b;
+      --muted:#bfbfbf;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{background:linear-gradient(180deg,var(--bg),#050505);color:#fff;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px;background:linear-gradient(90deg,var(--panel),#0b0b0b);border-radius:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(180deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:900;font-size:28px}
+    .title{line-height:1}
+    .title h1{margin:0;font-size:20px}
+    .title p{margin:0;color:var(--muted);font-size:13px}
+
+    .header-actions{display:flex;gap:10px;align-items:center}
+    .btn{background:linear-gradient(180deg,var(--accent),var(--accent-2));padding:12px 16px;border-radius:10px;font-weight:800;color:#fff;text-decoration:none;box-shadow:0 10px 30px rgba(225,6,0,0.18)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 12px;border-radius:10px;color:var(--muted)}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:22px}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:var(--radius);padding:20px;border:1px solid rgba(255,255,255,0.03)}
+    .hero h2{margin:0 0 8px;font-size:28px}
+    .lead{color:var(--muted);margin:0 0 14px}
+    .features{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);font-weight:700;color:#fff;border:1px solid rgba(255,255,255,0.02)}
+
+    /* left content */
+    .content-block{margin-bottom:18px}
+    h3{margin:0 0 8px;color:var(--accent)}
+    p.small{color:var(--muted);margin:0}
+
+    /* grid sections */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+    .card{background:linear-gradient(180deg,var(--panel),#0b0b0b);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .game-title{font-weight:800}
+    .meta{color:var(--muted);font-size:13px}
+
+    /* vip section */
+    .vip-list{display:flex;flex-direction:column;gap:12px}
+    .vip-item{background:linear-gradient(180deg,rgba(225,6,0,0.06),transparent);padding:14px;border-radius:12px;border:1px solid rgba(225,6,0,0.12)}
+    .vip-item h4{margin:0 0 6px}
+    .price{font-weight:900;color:var(--accent);}
+    .note{color:var(--muted);font-size:13px}
+
+    /* moderators */
+    .mods{display:flex;gap:12px;flex-wrap:wrap}
+    .mod{background:var(--glass);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+
+    /* interactions */
+    .interact{display:flex;gap:12px;align-items:center}
+
+    /* footer */
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    /* small animations */
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp 0.8s forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+
+    /* accessibility focus */
+    a:focus{outline:3px solid rgba(225,6,0,0.18);outline-offset:4px}
+
+    /* Invite fixed */
+    .fixed-invite{position:fixed;right:18px;bottom:18px;padding:12px 16px;border-radius:12px;background:linear-gradient(180deg,var(--accent),var(--accent-2));box-shadow:0 14px 40px rgba(225,6,0,0.22);font-weight:800}
+
+    /* accordion */
+    .acc-btn{width:100%;text-align:left;background:transparent;border:0;padding:12px 0;font-size:16px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+    .acc-content{max-height:0;overflow:hidden;transition:max-height 0.36s ease;padding-left:6px}
+    .open .acc-content{max-height:600px;padding-top:10px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">L</div>
+        <div class="title">
+          <h1>Lumira</h1>
+          <p>Comunidade de jogos e interação • +500 membros</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="btn" href="https://discord.gg/KUcdJ4rD" target="_blank" rel="noopener">Entrar no Discord</a>
+        <button id="copyBtn" class="btn-ghost" title="Copiar convite">Copiar convite</button>
+      </div>
+    </header>
+
+    <main class="hero">
+      <section class="panel fade-up">
+        <h2>Comunidade de jogos e interação</h2>
+        <p class="lead">No Lumira você encontra jogadores para todos os tipos de partidas — casual, competitivo, coop e criativo. Moderadores prontos para atender, eventos constantes e uma comunidade acolhedora.</p>
+
+        <div class="content-block">
+          <h3>Por que entrar?</h3>
+          <ul>
+            <li><strong>Comunidade ativa:</strong> chats por jogo, canais de voz e grupos formados diariamente.</li>
+            <li><strong>Interação:</strong> eventos sociais, minigames e salas para stream e coaching.</li>
+            <li><strong>Moderação 24/7:</strong> moderadores prontos para atender e ajudar em qualquer horário.</li>
+            <li><strong>Sorteios Semanais:</strong> sorteios de todos os jogos da comunidade (Clash Royale, Minecraft, Roblox, CS2, Warzone etc.).</li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h3>Como participar</h3>
+          <ol>
+            <li>Entre pelo convite oficial.</li>
+            <li>Leia as regras em <strong>#regras</strong> e escolha suas roles.</li>
+            <li>Participe dos canais por jogo e dos eventos semanais.</li>
+          </ol>
+        </div>
+
+        <div class="content-block">
+          <h3>Interação e recursos</h3>
+          <div class="interact">
+            <div class="pill">Eventos</div>
+            <div class="pill">Torneios</div>
+            <div class="pill">Bot custom</div>
+            <div class="pill">Canais exclusivos</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <a class="btn" href="https://discord.gg/KUcdJ4rD" target="_blank">Entrar na Lumira</a>
+        </div>
+      </section>
+
+      <aside class="panel fade-up">
+        <h3>Resumo rápido</h3>
+        <p class="small">Moderadores prontos para atender • +500 membros • Sorteios de todos os jogos</p>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <strong>Moderadores</strong>
+          <div class="mods" style="margin-top:8px">
+            <div class="mod">@ModLuma • Head</div>
+            <div class="mod">@Guardian • Torneios</div>
+            <div class="mod">@Support • Tickets</div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <strong>Sorteios</strong>
+          <p class="small" style="margin-top:8px">Sorteios semanais cobrindo TODOS os jogos — participe no canal <strong>#sorteios</strong>. Premiações: gift cards, skins, cargos VIP e muito mais.</p>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <strong>Nosso Bot</strong>
+          <p class="small" style="margin-top:8px">Comandos: !sorteio, !rank, !ticket — integrações de moderação e entretenimento.</p>
+        </div>
+      </aside>
+    </main>
+
+    <section class="panel fade-up" style="margin-top:20px">
+      <h3>Jogos em destaque</h3>
+      <div class="grid-3">
+        <div class="card">
+          <div class="game-title">Clash Royale</div>
+          <div class="meta">Torneios e duelos regulares</div>
+        </div>
+        <div class="card">
+          <div class="game-title">Minecraft</div>
+          <div class="meta">Servidores, minigames e eventos de construção</div>
+        </div>
+        <div class="card">
+          <div class="game-title">Roblox</div>
+          <div class="meta">Grupos de criação e partidas</div>
+        </div>
+        <div class="card">
+          <div class="game-title">CS2</div>
+          <div class="meta">Scrims e torneios</div>
+        </div>
+        <div class="card">
+          <div class="game-title">Warzone</div>
+          <div class="meta">Squads e eventos de combate</div>
+        </div>
+        <div class="card">
+          <div class="game-title">+ Outros</div>
+          <div class="meta">FIFA, Rocket League, Among Us e mais</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel fade-up" id="vips" style="margin-top:20px">
+      <h3>Vips & Cargos Exclusivos</h3>
+      <p class="note">LEMBRANDO QUE ACEITAMOS OUTRA COISAS EM TROCA! 10 UNIDADES DO VIP DE CADA DISPONÍVEIS DEPOIS ACABA!</p>
+
+      <div class="vip-list" style="margin-top:12px">
+        <div class="vip-item">
+          <h4>@Premium VIP</h4>
+          <p class="small">CANAL EXCLUSIVO + CALL EXCLUSIVA + CONVIDAR 1 AMIGO PARA TER ELE COM VC!</p>
+          <p class="price">PREÇO: 10 INVITES OU BRAINROT 10M+</p>
+          <p class="note">: SÃO EXCLUSIVOS!!!: TODOS GANHAM 1 CARGO EXTRA DE GRAÇA JUNTO A BENEFÍCIOS COMO CHAT EXCLUSIVO E MUITO MAIS!</p>
+        </div>
+
+        <div class="vip-item">
+          <h4>@VIP [ NOME ]</h4>
+          <p class="small">ESCOLHA O NOME DO CARGO! + CHAT E CALL EXCLUSIVA E 3X xp</p>
+          <p class="price">PREÇO: 15 INVITES OU 30M BRAINROT</p>
+          <p class="note">10 UNIDADES DISPONÍVEIS. TODOS GANHAM 1 CARGO EXTRA DE GRAÇA.</p>
+        </div>
+
+        <div class="vip-item">
+          <h4>@VIP [NOME + COR]</h4>
+          <p class="small">ESCOLHA A COR E O NOME DO CARGO , + CHAT E CALL EXCLUSIVO + 3.5 XP</p>
+          <p class="price">PREÇO: 40 INVITES OU 50M BRAINROT</p>
+          <p class="note">Quantidade limitada. Itens trocáveis por convite ou negociação.</p>
+        </div>
+
+        <div class="vip-item">
+          <h4>@Vip [all+ perms]</h4>
+          <p class="small">TODAS AS FUNÇÕES ANTERIORES + 5X XP + UMA PERMISSÃO ALEATÓRIA EXCLUSIVA E GANHAR CARGO @Patrocinadores DE GRAÇA!</p>
+          <p class="price">PREÇO: 50 INVITES OU BRAINROT + 100M</p>
+          <p class="note">Vip definitivo com perks avançados — limite de unidades aplicável.</p>
+        </div>
+
+        <div class="vip-item">
+          <h4>Observações</h4>
+          <ul>
+            <li>10 unidades do VIP de cada disponíveis — após esgotar, novas vendas serão suspensas.</li>
+            <li>Todos os VIPs ganham 1 cargo extra grátis junto dos benefícios como chat exclusivo.</li>
+            <li>Aceitamos outras formas de troca — negociações por DM com a staff.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel fade-up" style="margin-top:20px">
+      <h3>Moderadores — Prontos para atender</h3>
+      <p class="small">Nossa equipe de moderação está distribuída em turnos para garantir suporte e segurança 24/7. Contate via <strong>#suporte</strong> ou use <strong>!ticket</strong> no bot.</p>
+      <div style="margin-top:12px" class="mods">
+        <div class="mod">@ModLuma — Head Moderator</div>
+        <div class="mod">@Guardian — Torneios e eventos</div>
+        <div class="mod">@Support — Tickets e suporte</div>
+        <div class="mod">@NightWatch — Moderador noturno</div>
+      </div>
+    </section>
+
+    <section class="panel fade-up" style="margin-top:20px">
+      <h3>Interação & Eventos</h3>
+      <p class="small">Criamos espaços para socialização, squads de jogo, coaching, e transmissões ao vivo. Eventos fixos: torneios, noites de minigames e sorteios temáticos.</p>
+      <ul>
+        <li>Noites de Minigames — participe com amigos</li>
+        <li>Torneios por jogo com premiações</li>
+        <li>Sorteios semanais cobrindo todos os jogos</li>
+        <li>Eventos especiais em datas comemorativas</li>
+      </ul>
+    </section>
+
+    <section class="panel fade-up" style="margin-top:20px">
+      <h3>Comandos úteis do Bot</h3>
+      <div class="card" style="margin-top:8px">
+        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+          <li><strong>!sorteio</strong> — participar / info de sorteios</li>
+          <li><strong>!rank</strong> — ver ranking de atividade e XP</li>
+          <li><strong>!ticket</strong> — abrir chamado com a equipe</li>
+          <li><strong>!convites</strong> — ver quantos invites você tem</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>Convite permanente: <strong>https://discord.gg/KUcdJ4rD</strong></p>
+      <p>© Lumira — Comunidade de Games • Moderadores prontos para atender</p>
+    </footer>
+
+  </div>
+
+  <a class="fixed-invite" href="https://discord.gg/KUcdJ4rD" target="_blank" rel="noopener">Entrar no Discord</a>
+
+  <script>
+    const INVITE = 'https://discord.gg/KUcdJ4rD';
+    document.getElementById('copyBtn').addEventListener('click', async ()=>{
+      try{await navigator.clipboard.writeText(INVITE);alert('Link do convite copiado!')}
+      catch(e){prompt('Copie o link abaixo:',INVITE)}
+    });
+
+    // Simple fade-in for sections
+    document.querySelectorAll('.fade-up').forEach((el,i)=>{el.style.animationDelay=(i*80)+'ms'});
+  </script>
+</body>
+</html>
